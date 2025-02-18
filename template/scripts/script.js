@@ -12,3 +12,4 @@ if(window.location.pathname === '/' || window.location.pathname === '/index.html
     console.log('search.html');
 
 }
+
