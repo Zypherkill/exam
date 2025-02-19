@@ -72,18 +72,28 @@ function createMovieCard(movie, container) {
     const icon = document.createElement('i');
     icon.classList.add('fa-regular', 'fa-star');
 
+    icon.addEventListener('click', function() {
+        icon.classList.toggle('fa-solid');
+        icon.classList.toggle('fa-regular');
+    });
+
     const img = document.createElement('img');
     img.classList.add('poster');
     img.src = (movie.Poster && movie.Poster !== "N/A") ? movie.Poster : 'res/icons/missing-poster.svg';
+
+    const textBox = document.createElement('section');
+    textBox.classList.add('textBox');
 
     const title = document.createElement('h3');
     title.classList.add('cardTitle');
     title.textContent = movie.Title;
 
+
     card.appendChild(button);
     button.appendChild(icon);
     card.appendChild(img);
-    card.appendChild(title);
+    card.appendChild(textBox);
+    textBox.appendChild(title);
     container.appendChild(card);
 }
 
