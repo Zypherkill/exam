@@ -33,8 +33,9 @@ export function createMovieCard(movie, container) {
 
     const img = document.createElement('img');
     img.classList.add('poster');
-    img.src = (movie.Poster && movie.Poster !== "N/A") ? movie.Poster : 'res/icons/missing-poster.svg';
 
+    img.src = (movie.Poster && movie.Poster !== "N/A") ? movie.Poster : 'res/icons/missing-poster.svg';
+    img.setAttribute('alt', `Bild på poster från filmen ${movie.Title}`);
     const textBox = document.createElement('section');
     textBox.classList.add('textBox');
 
